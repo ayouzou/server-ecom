@@ -12,11 +12,6 @@ import Home from './Home';
 
 
 
-
-
-
-
-
 function App() {
   const queryclient = new QueryClient;
 
@@ -27,9 +22,9 @@ function App() {
        <Toaster />
         <BrowserRouter>
           <Routes>
-          <Route path="/" element={  <Home />} />
-            <Route path="/login" element={  <Login />} />
-            <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Home/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/register" element={<Register/>} />
           </Routes>
         </BrowserRouter>
       </SessionProvider>     
