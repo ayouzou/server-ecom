@@ -6,7 +6,8 @@ const database = require("./config/database");
 require("dotenv").config();
 const app = express();
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173","http://localhost:3001","http://localhost:3002","http://localhost:7777",],
+  
   
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
