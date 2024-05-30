@@ -7,5 +7,7 @@ router.get("/product/:productSlug", reviewControllers.getReviewsByProductSlug);
 router.get("/:id", reviewControllers.getReviewById);
 router.put("/:id", reviewControllers.updateReview);
 router.delete("/", reviewControllers.deleteReview);
+router.get("/", reviewControllers.getAllReview);
+
 
 module.exports = router;

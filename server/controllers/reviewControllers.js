@@ -29,6 +29,14 @@ const createReview = async (req, res) => {
     res.status(500).json({ message: "Failed to create a review" });
   }
 };
+const getAllReview = async (req, res) => {
+  try {
+    const reviews = await Review.find();
+    res.status(200).json(reviews);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to get a review" });
+  }
+}
 
 const getReviewById = async (req, res) => {
   try {
@@ -107,7 +115,7 @@ const deleteReview = async (req, res) => {
         .json({ message: "Permission denied. User is not the review owner." });
     }
     const deletedReview = await Review.findByIdAndRemove(reviewId);
-    console.log("deletedReview",deletedReview)
+    console.log("deletedReview", deletedReview)
     if (!deletedReview) {
       return res.status(404).json({ error: "Review not found" });
     }
@@ -132,4 +140,5 @@ module.exports = {
   getReviewsByProductSlug,
   updateReview,
   deleteReview,
+  getAllReview
 };
